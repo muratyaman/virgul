@@ -1,0 +1,49 @@
+{
+  "name": "virgul",
+  "version": "1.0.0",
+  "description": "Tool to generate GraphQL schema using OpenAPI specification",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "build:ts": "tsc --project tsconfig.build.json",
+    "build": "npm-run-all clean build:ts",
+    "convert:ts": "ts-node src/index.ts",
+    "convert": "node .",
+    "convert:ts:sample": "npm run convert:ts ./examples/pet-store.yaml ./examples/pet-store.graphql",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muratyaman/virgul.git"
+  },
+  "keywords": [
+    "openapi",
+    "graphql",
+    "specification",
+    "schema",
+    "generate",
+    "generator",
+    "convert"
+  ],
+  "author": "Haci Murat Yaman",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/muratyaman/virgul/issues"
+  },
+  "homepage": "https://github.com/muratyaman/virgul#readme",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.7",
+    "npm-run-all": "^4.1.5",
+    "openapi-types": "^12.1.3",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@readme/openapi-parser": "^2.5.0",
+    "yaml": "^2.3.4"
+  }
+}
